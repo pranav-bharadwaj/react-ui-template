@@ -1,0 +1,38 @@
+.container-parent-class{
+    display: flex;
+    margin-left: 1rem;
+}
+.Topsearch-main-class{
+   width: 80%;
+   position: relative; 
+   margin-top: 1.5em;
+   height: 10vh;
+  
+   
+  .Topsearch-grid-one-main{
+      display: flex;
+      width: 30%;
+      padding: 5px;
+      justify-content: space-around;
+      align-items: center;
+    font-size: 13px;
+    color: gray;
+      .Topsearch-grid-one-child{
+          padding: 5px;
+          width: 50%;
+          display: flex;
+          font-weight: 600;
+          align-items: center;
+ 
+          border-radius: 5px;
+          justify-content: space-around;
+          background-color: #F8F9FB;
+            
+      }
+  } 
+  .Topsearch-grid-two-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

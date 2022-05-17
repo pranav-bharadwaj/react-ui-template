@@ -1,0 +1,75 @@
+.side-menu-top-main .logo_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 1em;
+  height: 5em;
+}
+
+.side-menu-top-main .logo_main .logo_typo_parent {
+  margin-left: 0.5em;
+  color: #8676FF;
+  font-size: 18px;
+}
+
+.side-menu-top-main .list_main {
+  margin-top: 1em;
+}
+
+.side-menu-top-main .sidebar-menu-button:focus .icons_styles {
+  color: #8676FF !important;
+}
+
+.side-menu-top-main .icons_styles {
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: 800;
+}
+
+.side-menu-top-main .sidebar-messages-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.side-menu-top-main .sidebar-messages-tags .box-count {
+  background-color: #329d32;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 2px;
+}
+
+.side-menu-top-main .sidebar-messages-tags .sidebar-messages-count {
+  margin-left: 3.8em;
+}
+
+.side-menu-top-main .sidebar-messages-tags .sidebar-messages-count2 {
+  margin-left: 2em;
+}
+
+.side-menu-liner {
+  width: 1px;
+  height: 100%;
+  left: 85%;
+  z-index: 999;
+  position: absolute;
+  color: red;
+  background-color: #e0d2d1;
+}
+/*# sourceMappingURL=sidebar.css.map */

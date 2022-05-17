@@ -1,0 +1,75 @@
+.side-menu-top-main{
+   
+    
+    .logo_main{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 1em;
+        height: 5em;
+        .logo_typo_parent{
+            margin-left: 0.5em;
+            color: #8676FF;
+            font-size: 18px;
+        }
+        
+
+
+    }
+    .list_main{
+        margin-top: 1em;
+    }
+    // .list-items{
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    .sidebar-menu-button{
+        &:focus{
+            .icons_styles{
+                color:#8676FF !important;
+            }
+        }
+    }
+    .icons_styles{
+    
+        font-size: 18px;
+        font-family: "Roboto";
+        font-weight: 800;
+        
+    } 
+    
+    .sidebar-messages-tags{
+        display: flex;
+        justify-content: space-around;
+        .box-count{
+            background-color: rgb(50, 157, 50);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 5px;
+        
+            display: flex;
+            justify-content: center;
+            border-radius: 2px;
+        
+        }
+        .sidebar-messages-count{
+            margin-left: 3.8em;
+        }
+        .sidebar-messages-count2{
+            margin-left: 2em;
+        }
+    }
+     
+}
+.side-menu-liner{
+    width: 1px;
+    height: 100%;
+    left: 85%;
+    z-index: 999;
+    position: absolute;
+    color: red;
+    background-color: #e0d2d1;
+    
+}
