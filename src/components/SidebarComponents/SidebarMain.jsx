@@ -8,7 +8,11 @@ import "../../css/sidebar.css";
 
 function SidebarMain() {
   return (
-    <Box sx={{ width: 280 }} className="side-menu-top-main">
+    <Box
+      sx={{ width: 280 }}
+      className="side-menu-top-main"
+      style={{ position: "fixed" }}
+    >
       <List
         component="nav"
         sx={{

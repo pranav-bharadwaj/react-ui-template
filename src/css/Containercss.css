@@ -5,8 +5,22 @@
   margin-left: 1rem;
 }
 
+.container-parent-class .container-headline-user {
+  margin: 0;
+}
+
+.container-parent-class .container-headline-user p {
+  margin-top: -1rem;
+  color: gray;
+  font-size: 13px;
+}
+
+.container-parent-class .container-headline-user h3 {
+  color: #535151;
+}
+
 .Topsearch-main-class {
-  width: 80%;
+  width: 100%;
   position: relative;
   margin-top: 1.5em;
   height: 10vh;
@@ -47,11 +61,63 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 2rem;
+}
+
+.active {
+  background-color: #8676FF;
+}
+
+.active .bottom-options-cards {
+  color: white;
+}
+
+.deactive {
+  background-color: white;
+}
+
+.deactive .bottom-options-cards {
+  color: #8B7CFF;
+}
+
+.deactive .bottom-options-cards-icon {
+  color: #383874;
+}
+
+.bottom-table-main .table-header {
+  color: gray;
+}
+
+.bottom-table-main div {
+  line-height: 0.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.bottom-table-main span {
+  color: #383874;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bottom-table-main p {
+  color: gray;
+  font-size: 12px;
+  font-weight: 600;
 }
 /*# sourceMappingURL=Containercss.css.map */

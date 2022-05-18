@@ -1,12 +1,24 @@
 .container-parent-class{
     display: flex;
     margin-left: 1rem;
+    .container-headline-user{
+      margin: 0;
+      p{
+        margin-top: -1rem;
+        color: gray;
+        font-size: 13px;
+      }
+      h3{
+        color: rgb(83, 81, 81);
+      }
+     }
 }
 .Topsearch-main-class{
-   width: 80%;
+   width: 100%;
    position: relative; 
    margin-top: 1.5em;
    height: 10vh;
+  
   
    
   .Topsearch-grid-one-main{
@@ -32,7 +44,48 @@
   } 
   .Topsearch-grid-two-child{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 2rem;
+  }
+ 
+ 
+}
+.active{
+  background-color: #8676FF;
+ .bottom-options-cards{
+   color: white;
+ } 
+}
+.deactive{
+  background-color: white;
+  .bottom-options-cards{
+    color: #8B7CFF;
+  } 
+  .bottom-options-cards-icon{
+    color:#383874 ;
+  }
+}
+.bottom-table-main{
+  .table-header{
+    color:gray;
+  }
+  div{
+    line-height: 0.5;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-self: center;
+   
+  }
+  span{
+    color: #383874;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  p{
+    color: gray;
+    font-size: 12px;
+    font-weight: 600;
   }
 }
