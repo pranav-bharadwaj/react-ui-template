@@ -8,11 +8,11 @@ import Typography from "@mui/material/Typography";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import CallReceivedIcon from "@mui/icons-material/CallReceived";
 import "../css/Containercss.css";
-function Cards({ headline, cost, desc, raise, active }) {
+function Cards({ headline, cost, desc, raise, active, percentageData }) {
   return (
     <Card
       sx={{
-        maxWidth: 350,
+        maxWidth: 330,
         minHeight: 130,
         maxHeight: 200,
         display: "flex",
@@ -26,31 +26,40 @@ function Cards({ headline, cost, desc, raise, active }) {
             variant="subtitle2"
             style={{
               textTransform: "uppercase",
-              color: "gray",
+              color: "#B2B2CA",
               fontSize: "11px",
             }}
           >
             {headline}
           </Typography>
-          <Typography component="div" variant="h6" style={{ color: "#383874" }}>
+          <Typography
+            component="div"
+            variant="h6"
+            style={{ color: "#383874", fontWeight: "600" }}
+          >
             {cost}
           </Typography>
           <Typography
-            variant="subtitle2"
-            color="text.secondary"
+            color="#C3C4D2"
             component="div"
+            style={{ fontSize: "13px" }}
           >
-            <b>20%</b> {desc}
+            <b style={{ color: "gray" }}>{percentageData}</b> {desc}
           </Typography>
-          <Divider
-            style={{
-              position: "absolute",
-              top: "70%",
-              width: "100%",
-              left: "0%",
-              zIndex: 999,
-            }}
-          />
+          {active !== "active" ? (
+            <Divider
+              variant="fullWidth"
+              style={{
+                position: "absolute",
+                top: "70%",
+                width: "100%",
+                left: "0%",
+                zIndex: 999,
+              }}
+            />
+          ) : (
+            ""
+          )}
           <Box
             sx={{
               position: "absolute",
@@ -60,22 +69,17 @@ function Cards({ headline, cost, desc, raise, active }) {
               left: "0%",
             }}
             className={active}
-            // style={{ backgroundColor: active === "true" ? "#8676FF" : "white" }}
           >
             <div
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                width: "90%",
+                width: "91%",
                 marginLeft: "5px",
               }}
               className="bottom-options-cards"
             >
-              <Typography
-                variant="subtitle2"
-                component="span"
-                // style={{ color: "#8676FF" }}
-              >
+              <Typography variant="subtitle2" component="span">
                 See details
               </Typography>
               <KeyboardDoubleArrowRightIcon
@@ -89,9 +93,29 @@ function Cards({ headline, cost, desc, raise, active }) {
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
           {raise === "true" ? (
-            <CallMadeIcon style={{ color: "gray" }} />
+            <CallMadeIcon
+              style={{
+                color: "gray",
+                backgroundColor: "#F8F9FB",
+                padding: "8px",
+                color: "#21CC9E",
+                fontSize: "20px",
+                fontWeight: "800",
+                borderRadius: "7px",
+              }}
+            />
           ) : (
-            <CallReceivedIcon style={{ color: "gray" }} />
+            <CallReceivedIcon
+              style={{
+                color: "gray",
+                backgroundColor: "#F8F9FB",
+                padding: "8px",
+                color: "#21CC9E",
+                fontSize: "20px",
+                fontWeight: "800",
+                borderRadius: "7px",
+              }}
+            />
           )}
         </CardContent>
       </Box>

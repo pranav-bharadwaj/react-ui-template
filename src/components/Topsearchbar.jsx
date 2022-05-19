@@ -9,20 +9,15 @@ import "../css/Containercss.css";
 import InputBase from "@mui/material/InputBase";
 import NotificationsActiveTwoToneIcon from "@mui/icons-material/NotificationsActiveTwoTone";
 import { Divider } from "@mui/material";
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "start",
-  color: theme.palette.text.secondary,
-}));
+
 //for search options
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.05),
+  borderRadius: "10px",
+  border: "1.5px solid  #D7E4EE",
+  backgroundColor: alpha(theme.palette.common.white, 0.05),
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.black, 0.08),
+    backgroundColor: alpha(theme.palette.common.white, 0.08),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -53,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
-      width: "20ch",
+      width: "25ch",
     },
   },
 }));
@@ -67,7 +62,7 @@ function Topsearchbar() {
               <span
                 style={{
                   backgroundColor: "#E8ECF2",
-                  padding: "5px",
+                  padding: "7px",
                   width: "30%",
                   textAlign: "center",
                   borderRadius: "5px",
@@ -89,7 +84,7 @@ function Topsearchbar() {
                 color: "gray",
                 fontSize: "20px",
                 padding: "8px",
-                backgroundColor: "#e7ebf3",
+                backgroundColor: "#F8F9FB",
                 borderRadius: "50%",
               }}
             />
@@ -98,7 +93,7 @@ function Topsearchbar() {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Search…"
+                placeholder="Search or type keywords"
                 inputProps={{ "aria-label": "search" }}
               />
             </Search>
@@ -106,7 +101,7 @@ function Topsearchbar() {
         </Grid>
       </Grid>
       <Divider
-        sx={{ position: "absolute", width: "100%", left: "-2%", top: "80%" }}
+        sx={{ position: "absolute", width: "102%", left: "-2.5%", top: "80%" }}
       />
     </div>
   );

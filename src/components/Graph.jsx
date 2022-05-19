@@ -1,5 +1,16 @@
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Grid,
+  InputAdornment,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React from "react";
+import Product from "../assets/icons8-box-91.png";
 import CardHeader from "@mui/material/CardHeader";
 import { PureComponent } from "react";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
@@ -15,68 +26,141 @@ import {
   Pie,
   Sector,
   Cell,
+  LineChart,
+  Legend,
+  Line,
 } from "recharts";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Box, textAlign } from "@mui/system";
+function CustomTooltip({ active, payload }) {
+  if (active) {
+    return (
+      <Box
+        sx={{
+          backgroundColor: "#FFFFFF",
+          padding: "5px",
+          borderRadius: "5px",
+          border: "1px solid #CECED2",
+          color: "#383874",
+          fontWeight: "600",
+        }}
+      >
+        {`$${payload[0].value * 1000}`}
+      </Box>
+    );
+  }
+}
 function Graph() {
+  const [age, setAge] = React.useState(10);
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   var data = [
     {
+      name: "",
+      uv: 2,
+      pv: 1,
+      amt: 3,
+    },
+    {
       name: "20 dec",
-      uv: 400,
-      pv: 2400,
-      amt: 2400,
+      uv: 2,
+      pv: 2,
+      amt: 2,
+    },
+    {
+      uv: 1,
+      pv: 1398,
+      amt: 2,
     },
     {
       name: "21 dec",
-      uv: 900,
-      pv: 1398,
-      amt: 2210,
+      uv: 3,
+      pv: 3,
+      amt: 2,
+    },
+    {
+      uv: 3,
+      pv: 4,
+      amt: 3,
     },
     {
       name: "22 dec",
-      uv: 600,
-      pv: 9800,
-      amt: 2290,
+      uv: 2,
+      pv: 5,
+      amt: 2,
+    },
+    {
+      uv: 4,
+      pv: 6,
+      amt: 4,
     },
     {
       name: "23 dec",
-      uv: 1300,
-      pv: 4300,
-      amt: 2000,
+      uv: 3,
+      pv: 1398,
+      amt: 2,
+    },
+    {
+      uv: 2.5,
+      pv: 4800,
+      amt: 3,
     },
     {
       name: "24 dec",
-      uv: 800,
-      pv: 4800,
-      amt: 2181,
+      uv: 4,
+      pv: 1398,
+      amt: 2,
+    },
+    {
+      uv: 3,
+      pv: 3900,
+      amt: 4,
     },
     {
       name: "25 dec",
-      uv: 2000,
-      pv: 3900,
-      amt: 2500,
+      uv: 3,
+      pv: 1398,
+      amt: 2,
     },
     {
-      name: "26 dec",
-      uv: 1500,
+      uv: 2,
       pv: 4300,
-      amt: 2100,
+      amt: 1,
     },
     {
-      name: "27 dec ",
-      uv: 2500,
-      pv: 4300,
-      amt: 2100,
-    },
-    {
-      name: "28 dec",
-      uv: 2000,
-      pv: 4200,
-      amt: 2000,
+      name: "26 dec ",
+      uv: 3,
+      pv: 1398,
+      amt: 2,
     },
   ];
   const piedata = [
-    { name: "Group A", value: 500 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
+    {
+      name: "Group A",
+      value: 2000,
+      start: 180,
+      end: 90,
+      innerRadius: 60,
+      outerRadius: 105,
+    },
+    {
+      name: "Group B",
+      value: 1000,
+      start: 90,
+      end: 40,
+      innerRadius: 64,
+      outerRadius: 100,
+    },
+    {
+      name: "Group C",
+      value: 800,
+      start: 40,
+      end: 0,
+      innerRadius: 66,
+      outerRadius: 98,
+    },
   ];
   const COLORS = ["#21CC9E", "#8676FF", "#EFF4F8"];
   return (
@@ -86,36 +170,72 @@ function Graph() {
       direction="row"
       width="100%"
       alignItems="flex-start"
-      justifyContent="center"
-      style={{ flexGrow: 1 }}
+      gap={8.3}
+      style={{ flexGrow: 1, marginLeft: "0" }}
     >
-      <Grid item xs={8}>
+      <Grid item xs={7.4}>
         <Card
           sx={{
             maxWidth: "100%",
             minHeight: 130,
             maxHeight: 235,
             padding: "10px",
-            width: "95%",
+            width: "100%",
             border: "1px solid #e3cccc",
             boxShadow: "none",
-            marginTop: "1rem",
+            margin: "1rem 0rem 0rem -1rem",
           }}
         >
-          <Typography style={{ fontSize: "20px", padding: "10px" }}>
-            Sales analytics
-          </Typography>
-          <ResponsiveContainer width="100%" height={200}>
+          <Stack direction={"row"} justifyContent={"space-between"}>
+            <Typography
+              style={{
+                fontSize: "16px",
+                padding: "10px",
+                fontWeight: "600",
+                color: "#383874",
+              }}
+            >
+              Sales analytics
+            </Typography>
+            <Box sx={{ display: "flex" }}>
+              <TextField
+                value={age}
+                select
+                size="small"
+                onChange={handleChange}
+                inputProps={{ "aria-label": "Without label" }}
+                sx={{
+                  width: "12rem",
+                  heigth: "1px",
+                  outline: "none",
+                  border: "none",
+                  fontSize: "12px",
+                }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">period:</InputAdornment>
+                  ),
+                }}
+              >
+                <MenuItem value={10}>This week</MenuItem>
+                <MenuItem value={20}>Last Month</MenuItem>
+                <MenuItem value={30}>Last Year</MenuItem>
+              </TextField>
+            </Box>
+          </Stack>
+          <ResponsiveContainer width="100%" height={210}>
             <AreaChart
-              width="80%"
+              travellerWidth={10}
+              width="60%"
               height={200}
               data={data}
               margin={{
                 top: 10,
                 right: 30,
-                left: 0,
-                bottom: 0,
+                left: 10,
+                bottom: 10,
               }}
+              style={{ fontSize: "11px" }}
             >
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -127,22 +247,37 @@ function Graph() {
                   <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="4 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
+              <CartesianGrid />
+              <XAxis
+                dataKey="name"
+                tickLine={false}
+                axisLine={{ stroke: "#bbbbbb" }}
+                tick={{ fill: "#b0b0b0" }}
+              />
+              <YAxis
+                dataKey="amt"
+                unit="K"
+                width={30}
+                axisLine={{ stroke: "#bbbbbb" }}
+                tick={{ fill: "#b0b0b0" }}
+                tickFormatter={(num) => {
+                  return `$${num}`;
+                }}
+              />
+              <Tooltip content={<CustomTooltip />} />
               <Area
-                type="monotone"
+                type="function"
                 dataKey="uv"
                 stroke="#8884d8"
-                fillOpacity={1}
+                fillOpacity={0.1}
+                strokeWidth={3}
                 fill="url(#colorUv)"
               />
             </AreaChart>
           </ResponsiveContainer>
         </Card>
       </Grid>
-      <Grid item xs={4} style={{ position: "relative" }}>
+      <Grid item xs={3.5} style={{ position: "relative" }}>
         <Card
           sx={{
             border: "1px solid #e3cccc",
@@ -150,13 +285,29 @@ function Graph() {
             marginTop: "1rem",
             minHeight: 130,
             maxHeight: 235,
+            maxWidth: 330,
             padding: "10px",
             position: "relative",
           }}
         >
-          <Typography style={{ fontSize: "18px", padding: "5px" }}>
-            Social source
-          </Typography>
+          <Stack
+            direction={"row"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
+            <Typography
+              style={{
+                fontSize: "16px",
+                padding: "10px",
+                fontWeight: "600",
+                color: "#383874",
+              }}
+            >
+              Social Source
+            </Typography>
+            <MoreHorizIcon sx={{ color: "gray" }} />
+          </Stack>
+
           <div
             style={{
               positon: "relative",
@@ -165,11 +316,11 @@ function Graph() {
               alignItems: "center",
             }}
           >
-            <div
+            <Box
               style={{
                 position: "absolute",
                 textAlign: "center",
-                top: "54%",
+                top: "58%",
                 left: "52%",
                 transform: "translate(-50%,-50%)",
               }}
@@ -187,48 +338,46 @@ function Graph() {
               </Typography>
               <Typography
                 component="div"
-                variant="h6"
-                style={{ color: "#383874" }}
+                variant="h5"
+                style={{ color: "#383874", fontWeight: "600" }}
               >
                 3,245
               </Typography>
               <span style={{ display: "flex", color: "#403d3d" }}>
-                <ProductionQuantityLimitsIcon style={{ fontSize: "15px" }} />
+                <img src={Product} alt="product" width="15rem" height="15rem" />
                 <Typography
                   component="div"
                   variant="subtitle2"
                   style={{
-                    textTransform: "uppercase",
-
                     fontSize: "11px",
+                    color: "#383874",
+                    fontWeight: "600",
                   }}
                 >
-                  products
+                  &nbsp;Products
                 </Typography>
               </span>
-            </div>
-
-            <PieChart width={350} height={130}>
-              <Pie
-                data={piedata}
-                cx={180}
-                cy={120}
-                startAngle={180}
-                endAngle={0}
-                innerRadius={80}
-                outerRadius={120}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {data.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                    strokeWidth={2 ** (index + 1)}
-                  />
+            </Box>
+            <ResponsiveContainer width="100%" height={120}>
+              <PieChart>
+                {piedata.map((entry, index) => (
+                  <Pie
+                    cx="50%"
+                    cy={100}
+                    data={[entry]}
+                    startAngle={entry.start}
+                    endAngle={entry.end}
+                    innerRadius={entry.innerRadius}
+                    outerRadius={entry.outerRadius}
+                    fill="#8884d8"
+                    dataKey="value"
+                    paddingAngle={0}
+                  >
+                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                  </Pie>
                 ))}
-              </Pie>
-            </PieChart>
+              </PieChart>
+            </ResponsiveContainer>
           </div>
           <CardContent
             style={{
@@ -239,7 +388,7 @@ function Graph() {
               lineHeight: "1.5",
             }}
           >
-            <div>
+            <Box>
               <div
                 style={{
                   width: "100%",
@@ -263,9 +412,9 @@ function Graph() {
                 variant="h6"
                 style={{ color: "#383874", fontSize: "18px" }}
               >
-                1618
+                1,618
               </Typography>
-            </div>
+            </Box>
             <div>
               <div
                 style={{

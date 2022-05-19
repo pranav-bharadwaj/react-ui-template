@@ -1,6 +1,7 @@
 .container-parent-class{
     display: flex;
     margin-left: 1rem;
+   
     .container-headline-user{
       margin: 0;
       p{
@@ -75,17 +76,17 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-self: center;
+    
    
   }
   span{
     color: #383874;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
   }
   p{
-    color: gray;
-    font-size: 12px;
-    font-weight: 600;
+    color: #CACBD8;
+    font-size: 13px;
+    font-weight: 500;
   }
 }

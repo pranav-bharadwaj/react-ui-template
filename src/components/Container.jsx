@@ -41,21 +41,22 @@ export default function Container() {
                     <Stack
                       direction="row"
                       spacing={2}
+                      width={"85%"}
                       alignContent="center"
                       alignItems="center"
-                      justifyContent="center"
+                      justifyContent="flex-end"
                     >
                       <Button
                         variant="outlined"
+                        style={{ textTransform: "capitalize" }}
                         endIcon={<ShareIcon />}
-                        size="small"
                       >
                         Share
                       </Button>
                       <Button
                         variant="contained"
+                        style={{ textTransform: "capitalize" }}
                         endIcon={<FileDownloadIcon />}
-                        size="small"
                       >
                         Export
                       </Button>
@@ -64,23 +65,25 @@ export default function Container() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid container spacing={3} direction="row">
+            <Grid container spacing={5} direction="row">
               <Grid item xs>
                 <Cards
-                  headline="Total Income"
-                  cost="$589,209.78"
-                  desc="increased compared to last week"
-                  raise="true"
-                  active="deactive"
+                  headline={"Total Income"}
+                  cost={"$589,209.78"}
+                  desc={"increased compared to last week"}
+                  raise={"true"}
+                  percentageData={"20%"}
+                  active={"deactive"}
                 />
               </Grid>
               <Grid item xs>
                 <Cards
-                  headline="Total expense"
-                  cost="$120,458.90"
-                  desc="decrease compared to last week"
-                  raise="false"
-                  active="deactive"
+                  headline={"Total expense"}
+                  cost={"$120,458.90"}
+                  desc={"decrease compared to last week"}
+                  raise={"false"}
+                  percentageData={"10%"}
+                  active={"deactive"}
                 />
               </Grid>
               <Grid item xs>
@@ -89,12 +92,13 @@ export default function Container() {
                   cost="502,903"
                   desc="increased compared to last week"
                   raise="true"
+                  percentageData={"85%"}
                   active="active"
                 />
               </Grid>
             </Grid>
             <Grid container spacing={1}>
-              <Grid item xs={18}>
+              <Grid item xs={14}>
                 <Graph />
               </Grid>
             </Grid>

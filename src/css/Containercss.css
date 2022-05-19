@@ -105,19 +105,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-item-align: center;
-      align-self: center;
 }
 
 .bottom-table-main span {
   color: #383874;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .bottom-table-main p {
-  color: gray;
-  font-size: 12px;
-  font-weight: 600;
+  color: #CACBD8;
+  font-size: 13px;
+  font-weight: 500;
 }
 /*# sourceMappingURL=Containercss.css.map */

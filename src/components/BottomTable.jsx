@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import { Button, Typography } from "@mui/material";
 import cameraimg from "../assets/JN4id4eQ79r4c4JzHVNtH5.jpg";
 import "../css/Containercss.css";
+import { Box } from "@mui/system";
 function createData(
   product,
   orderdate,
@@ -35,47 +36,79 @@ const rows = [
   createData(
     "Camera Nikon D 5000",
     "December 12,2021",
-    "Shopping",
+    "Shipping",
     "Collective Electronic",
     "$2102.00",
     "x10",
-    "$2102.00"
+    "$22102.00"
   ),
   createData(
-    "Camera Cannon Dlsr",
+    "Poloroid one step instant",
     "January 12,2021",
-    "Delivered",
-    "Gadjets Electronic",
-    "$4555.00",
-    "x01",
+    "Success",
+    "Alleya photograph inc,",
+    "$299.00",
+    "x20",
     "$4555.00"
   ),
-  createData(
-    "Camera Apple D 5000",
-    "Febraury 12,2021",
-    "Cancelled",
-    "Mobiles Electronic",
-    "$2102.00",
-    "x25",
-    "$2102.00"
-  ),
-  //   createData("Eclair", 262, 16.0, 24, 6.0),
-  //   createData("Cupcake", 305, 3.7, 67, 4.3),
-  //   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
+function ShippingBtn({ context }) {
+  return (
+    <Box
+      sx={{
+        width: "4rem",
+        height: "0.5rem",
+        padding: "10px",
+        textAlign: "center",
+        backgroundColor: "#FFF3DA",
+        borderRadius: "5px",
+      }}
+    >
+      <Typography style={{ color: "#FFC452", fontSize: "12px" }}>
+        {context}
+      </Typography>
+    </Box>
+  );
+}
+function SuccessBtn({ context }) {
+  return (
+    <Box
+      sx={{
+        width: "4rem",
+        height: "0.5rem",
+        padding: "10px",
+        textAlign: "center",
+        backgroundColor: "#D3F5EC",
+        borderRadius: "5px",
+      }}
+    >
+      <Typography style={{ color: "#34D0A6", fontSize: "12px" }}>
+        {context}
+      </Typography>
+    </Box>
+  );
+}
 function BottomTable() {
   return (
-    <TableContainer component={Paper} className="bottom-table-main">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead className="table-header">
+    <TableContainer
+      component={Paper}
+      className="bottom-table-main"
+      sx={{ marginBottom: "1rem" }}
+    >
+      <Table
+        sx={{ minWidth: "100%", width: "max-content" }}
+        aria-label="simple table"
+        size="small"
+      >
+        <TableHead className="table-header" sx={{ textAlign: "start" }}>
           <TableRow>
-            <TableCell>Product</TableCell>
-            <TableCell align="right">Orderdate</TableCell>
-            <TableCell align="right">status</TableCell>
-            <TableCell align="right">Customer</TableCell>
-            <TableCell align="right">Price Per Unit</TableCell>
-            <TableCell align="right">Quantity</TableCell>
-            <TableCell align="right">Total Price</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>PRODUCT</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>ORDER DATE</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>STATUS</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>CUSTOMER</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>PRICE PER UNIT</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>QUANTITY</TableCell>
+            <TableCell sx={{ color: "#ADAEC2" }}>TOTAL PRICE</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -84,52 +117,64 @@ function BottomTable() {
               key={row.product}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell>
                 <section
                   style={{
                     display: "flex",
-                    justifyContent: "space-around",
+                    justifyContent: "flex-start",
                     alignItems: "center",
                   }}
                 >
                   <Avatar
-                    sx={{ bgcolor: green[500] }}
-                    variant="square"
+                    sx={{ bgcolor: green[500], width: 34, height: 34 }}
+                    variant="rounded"
                     src={cameraimg}
                   >
                     N
                   </Avatar>
-                  <div>
+                  <Box
+                    sx={{
+                      marginLeft: "1rem",
+                    }}
+                  >
                     <p>#2345</p>
                     <span>{row.product}</span>
-                  </div>
+                  </Box>
                 </section>
               </TableCell>
-              <TableCell align="right">
+              <TableCell>
                 <div>
                   <p>10:09 AM</p>
                   <span>{row.orderdate}</span>
                 </div>
               </TableCell>
-              <TableCell align="right">
-                <Button varient="contained" color="primary">
-                  {row.status}
-                </Button>
+              <TableCell>
+                {row.status === "Success" ? (
+                  <SuccessBtn context={"Success"} />
+                ) : (
+                  <ShippingBtn context={"Shipping"} />
+                )}
               </TableCell>
-              <TableCell align="right">
-                <div>
+              <TableCell>
+                <div style={{ marginTop: "1rem" }}>
                   <span>{row.customer}</span>
                   <p>Los Angles,New york</p>
                 </div>
               </TableCell>
-              <TableCell align="right">
-                <span>{row.priceperrate}</span>
+              <TableCell align="center">
+                <Typography style={{ color: "#41417A", fontSize: "17px" }}>
+                  {row.priceperrate}
+                </Typography>
               </TableCell>
-              <TableCell align="right">
-                <span>{row.quantity}</span>
+              <TableCell align="center">
+                <Typography style={{ color: "#41417A", fontSize: "17px" }}>
+                  {row.quantity}
+                </Typography>
               </TableCell>
-              <TableCell align="right">
-                <span>{row.totalprice}</span>
+              <TableCell>
+                <Typography style={{ color: "#21CC9E", fontSize: "17px" }}>
+                  {row.totalprice}
+                </Typography>
               </TableCell>
             </TableRow>
           ))}

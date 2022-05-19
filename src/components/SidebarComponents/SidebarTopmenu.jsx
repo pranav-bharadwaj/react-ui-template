@@ -15,7 +15,7 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import Logo from "../../assets/logoMain.svg";
+import Logo from "../../assets/logo.png";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import "../../css/sidebar.css";
@@ -25,7 +25,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: "5px",
-          color: "grey",
+          color: "#ADAEC2",
           "&:focus": {
             color: "#8676FF",
             backgroundColor: "#F8F9FB",
@@ -74,7 +74,7 @@ function SidebarTopmenu() {
           <div className="logo_main">
             <img src={Logo} alt="logo" width={30} />
             <span className="logo_typo_parent">
-              <h3 className="logo_typo">KloudMate</h3>
+              <h3 className="logo_typo">Analyze.</h3>
             </span>
           </div>
 
@@ -159,7 +159,7 @@ function SidebarTopmenu() {
             <Divider />
 
             <ListItem>
-              <h3 style={{ color: "grey" }}>Account</h3>
+              <h4 style={{ color: "grey", fontWeight: "500" }}>Account</h4>
             </ListItem>
 
             <ListItem>

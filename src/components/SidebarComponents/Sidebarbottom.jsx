@@ -14,20 +14,20 @@ function Sidebarbottom() {
     <List
       sx={{
         width: "100%",
-        maxWidth: 300,
+        maxWidth: 270,
         bgcolor: "background.paper",
-        marginTop: "2.5rem",
+        marginTop: "4.5rem",
       }}
     >
-      <Divider sx={{ width: "80%" }} />
+      <Divider sx={{ width: "88%" }} />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src={AvatarImg} />
         </ListItemAvatar>
         <ListItemText
           primary="Albert Tristian"
-          style={{ color: "black", fontWeight: 800 }}
-          primaryTypographyProps={{ fontSize: "15px" }}
+          style={{ color: "#383874" }}
+          primaryTypographyProps={{ fontSize: "15px", fontWeight: 600 }}
           secondary={
             <React.Fragment>
               <Typography

@@ -5,17 +5,6 @@ import Container from "./components/Container";
 import { color } from "@mui/system";
 
 const theme = createTheme({
-  // typography: {
-  //   fontFamily: "Segoe UI",
-  //   fontWeightLight: 400,
-  //   fontWeightRegular: 600,
-  //   fontWeightMedium: 700,
-  //   fontWeightBold: 800,
-  //   button: {
-  //     textTransform: "capitalize",
-  //     textDecoration: "none",
-  //   },
-  // },
   palette: {
     primary: {
       main: "#6D78FE",
@@ -25,6 +14,16 @@ const theme = createTheme({
       main: "#ff7e79",
     },
     divider: "rgba(0,0,0,0.3)",
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          border: "1px solid #D7E4EE",
+        },
+      },
+    },
   },
 });
 
