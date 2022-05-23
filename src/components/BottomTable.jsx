@@ -102,13 +102,27 @@ function BottomTable() {
       >
         <TableHead className="table-header" sx={{ textAlign: "start" }}>
           <TableRow>
-            <TableCell sx={{ color: "#ADAEC2" }}>PRODUCT</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>ORDER DATE</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>STATUS</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>CUSTOMER</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>PRICE PER UNIT</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>QUANTITY</TableCell>
-            <TableCell sx={{ color: "#ADAEC2" }}>TOTAL PRICE</TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              PRODUCT
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              ORDER DATE
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              STATUS
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              CUSTOMER
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              PRICE PER UNIT
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              QUANTITY
+            </TableCell>
+            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+              TOTAL PRICE
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -162,17 +176,38 @@ function BottomTable() {
                 </div>
               </TableCell>
               <TableCell align="center">
-                <Typography style={{ color: "#41417A", fontSize: "17px" }}>
+                <Typography
+                  style={{
+                    color: "#41417A",
+                    fontSize: "17px",
+                    fontFamily: "Open Sans",
+                    fontWeight: "600",
+                  }}
+                >
                   {row.priceperrate}
                 </Typography>
               </TableCell>
               <TableCell align="center">
-                <Typography style={{ color: "#41417A", fontSize: "17px" }}>
+                <Typography
+                  style={{
+                    color: "#41417A",
+                    fontSize: "17px",
+                    fontFamily: "Open Sans",
+                    fontWeight: "600",
+                  }}
+                >
                   {row.quantity}
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography style={{ color: "#21CC9E", fontSize: "17px" }}>
+                <Typography
+                  style={{
+                    color: "#21CC9E",
+                    fontSize: "17px",
+                    fontFamily: "Open Sans",
+                    fontWeight: "600",
+                  }}
+                >
                   {row.totalprice}
                 </Typography>
               </TableCell>

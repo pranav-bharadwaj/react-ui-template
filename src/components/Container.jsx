@@ -13,7 +13,7 @@ import Graph from "./Graph";
 import BottomTable from "./BottomTable";
 export default function Container() {
   return (
-    <div className="container-parent-class">
+    <div className="container-parent-class" style={{ width: "98%" }}>
       <Grid container spacing={2} direction="row">
         <Grid item>
           <SidebarMain />
@@ -33,7 +33,7 @@ export default function Container() {
                 <Grid container direction="row" spacing={2} alignItems="center">
                   <Grid item xs={8}>
                     <div className="container-headline-user">
-                      <h3>Hi,Albert Tristian</h3>
+                      <h3>Hi,&nbsp;Albert Tristian</h3>
                       <p>Welcome back to analyze</p>
                     </div>
                   </Grid>
@@ -65,7 +65,7 @@ export default function Container() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid container spacing={5} direction="row">
+            <Grid container spacing={4} direction="row">
               <Grid item xs>
                 <Cards
                   headline={"Total Income"}
@@ -98,7 +98,7 @@ export default function Container() {
               </Grid>
             </Grid>
             <Grid container spacing={1}>
-              <Grid item xs={14}>
+              <Grid item xs={14} sx={{ marginTop: "1.5rem" }}>
                 <Graph />
               </Grid>
             </Grid>

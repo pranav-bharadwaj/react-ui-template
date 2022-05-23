@@ -30,6 +30,7 @@ import {
   Legend,
   Line,
 } from "recharts";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Box, textAlign } from "@mui/system";
 function CustomTooltip({ active, payload }) {
@@ -42,7 +43,8 @@ function CustomTooltip({ active, payload }) {
           borderRadius: "5px",
           border: "1px solid #CECED2",
           color: "#383874",
-          fontWeight: "600",
+          fontWeight: "700",
+          fontFamily: "Open Sans",
         }}
       >
         {`$${payload[0].value * 1000}`}
@@ -50,6 +52,7 @@ function CustomTooltip({ active, payload }) {
     );
   }
 }
+
 function Graph() {
   const [age, setAge] = React.useState(10);
 
@@ -197,7 +200,7 @@ function Graph() {
             >
               Sales analytics
             </Typography>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", height: "0.5px" }}>
               <TextField
                 value={age}
                 select
@@ -206,14 +209,12 @@ function Graph() {
                 inputProps={{ "aria-label": "Without label" }}
                 sx={{
                   width: "12rem",
-                  heigth: "1px",
-                  outline: "none",
-                  border: "none",
-                  fontSize: "12px",
+                  height: "0.5px",
+                  fontSize: "10px",
                 }}
                 InputProps={{
                   startAdornment: (
-                    <InputAdornment position="start">period:</InputAdornment>
+                    <InputAdornment position="start">Period:</InputAdornment>
                   ),
                 }}
               >
@@ -264,14 +265,21 @@ function Graph() {
                   return `$${num}`;
                 }}
               />
+
               <Tooltip content={<CustomTooltip />} />
               <Area
                 type="function"
                 dataKey="uv"
                 stroke="#8884d8"
-                fillOpacity={0.1}
+                fillOpacity={0.11}
                 strokeWidth={3}
                 fill="url(#colorUv)"
+                activeDot={{
+                  stroke: "#8676FF",
+                  strokeWidth: 3,
+                  r: 4,
+                  fill: "white",
+                }}
               />
             </AreaChart>
           </ResponsiveContainer>
@@ -305,7 +313,7 @@ function Graph() {
             >
               Social Source
             </Typography>
-            <MoreHorizIcon sx={{ color: "gray" }} />
+            <MoreHorizIcon sx={{ color: "#d0dbd3" }} />
           </Stack>
 
           <div
@@ -317,11 +325,12 @@ function Graph() {
             }}
           >
             <Box
-              style={{
+              sx={{
                 position: "absolute",
                 textAlign: "center",
                 top: "58%",
-                left: "52%",
+                left: "50%",
+
                 transform: "translate(-50%,-50%)",
               }}
             >
@@ -339,9 +348,13 @@ function Graph() {
               <Typography
                 component="div"
                 variant="h5"
-                style={{ color: "#383874", fontWeight: "600" }}
+                style={{
+                  color: "#383874",
+                  fontWeight: "700",
+                  fontFamily: "Open Sans",
+                }}
               >
-                3,245
+                3,234
               </Typography>
               <span style={{ display: "flex", color: "#403d3d" }}>
                 <img src={Product} alt="product" width="15rem" height="15rem" />
@@ -386,6 +399,7 @@ function Graph() {
               textAlign: "center",
               alignItems: "center",
               lineHeight: "1.5",
+              fontFamily: "Open Sans",
             }}
           >
             <Box>
@@ -403,6 +417,7 @@ function Graph() {
                   textTransform: "uppercase",
                   color: "gray",
                   fontSize: "11px",
+                  fontFamily: "Open Sans",
                 }}
               >
                 E-commerce
@@ -410,7 +425,12 @@ function Graph() {
               <Typography
                 component="div"
                 variant="h6"
-                style={{ color: "#383874", fontSize: "18px" }}
+                style={{
+                  color: "#383874",
+                  fontSize: "18px",
+                  fontFamily: "Open Sans",
+                  fontWeight: "700",
+                }}
               >
                 1,618
               </Typography>
@@ -421,6 +441,7 @@ function Graph() {
                   width: "100%",
                   height: "3px",
                   backgroundColor: "#8676FF",
+                  fontFamily: "Open Sans",
                 }}
               ></div>
               <Typography
@@ -430,6 +451,7 @@ function Graph() {
                   textTransform: "uppercase",
                   color: "gray",
                   fontSize: "11px",
+                  fontFamily: "Open Sans",
                 }}
               >
                 Facebook
@@ -437,7 +459,12 @@ function Graph() {
               <Typography
                 component="div"
                 variant="h6"
-                style={{ color: "#383874", fontSize: "18px" }}
+                style={{
+                  color: "#383874",
+                  fontSize: "18px",
+                  fontFamily: "Open Sans",
+                  fontWeight: "700",
+                }}
               >
                 852
               </Typography>
@@ -464,7 +491,12 @@ function Graph() {
               <Typography
                 component="div"
                 variant="h6"
-                style={{ color: "#383874", fontSize: "18px" }}
+                style={{
+                  color: "#383874",
+                  fontSize: "18px",
+                  fontWeight: "700",
+                  fontFamily: "Open Sans",
+                }}
               >
                 808
               </Typography>

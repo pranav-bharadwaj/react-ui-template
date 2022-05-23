@@ -9,7 +9,8 @@ import "../css/Containercss.css";
 import InputBase from "@mui/material/InputBase";
 import NotificationsActiveTwoToneIcon from "@mui/icons-material/NotificationsActiveTwoTone";
 import { Divider } from "@mui/material";
-
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import notification from "../assets/notification.png";
 //for search options
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -67,19 +68,26 @@ function Topsearchbar() {
                   textAlign: "center",
                   borderRadius: "5px",
                   color: "#051c78",
+                  fontWeight: "500",
                 }}
               >
                 EN
               </span>
-              <span>ID</span>
+              <span
+                style={{
+                  padding: "7px",
+                }}
+              >
+                ID
+              </span>
             </div>
-            <span>English</span>
+            <span style={{ color: "#B8B9C9" }}>English</span>
           </div>
         </Grid>
 
         <Grid item xs>
           <div className="Topsearch-grid-two-child">
-            <NotificationsActiveTwoToneIcon
+            <NotificationsNoneIcon
               sx={{
                 color: "gray",
                 fontSize: "20px",
@@ -101,7 +109,7 @@ function Topsearchbar() {
         </Grid>
       </Grid>
       <Divider
-        sx={{ position: "absolute", width: "102%", left: "-2.5%", top: "80%" }}
+        sx={{ position: "absolute", width: "103%", left: "-2.5%", top: "80%" }}
       />
     </div>
   );

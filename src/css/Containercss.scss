@@ -6,11 +6,13 @@
       margin: 0;
       p{
         margin-top: -1rem;
-        color: gray;
+        color: #B8B9C9;
         font-size: 13px;
+        text-transform: lowercase;
       }
       h3{
-        color: rgb(83, 81, 81);
+        color: #383874;
+        font-weight: 520;
       }
      }
 }
@@ -24,9 +26,9 @@
    
   .Topsearch-grid-one-main{
       display: flex;
-      width: 30%;
-      padding: 5px;
-      justify-content: space-around;
+      width: 25%;
+      padding: 3px;
+      justify-content: space-between;
       align-items: center;
     font-size: 13px;
     color: gray;
@@ -44,6 +46,7 @@
       }
   } 
   .Topsearch-grid-two-child{
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -82,11 +85,14 @@
   span{
     color: #383874;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: "Open Sans" sans-serif;
   }
   p{
     color: #CACBD8;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Open Sans" sans-serif;
+
   }
 }

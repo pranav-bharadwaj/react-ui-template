@@ -19,6 +19,7 @@ import Logo from "../../assets/logo.png";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import "../../css/sidebar.css";
+import { style } from "@mui/system";
 const theme = createTheme({
   components: {
     MuiListItemButton: {
@@ -42,6 +43,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           marginRight: "-1rem",
+          color: "#ADAEC2",
         },
       },
     },
@@ -72,7 +74,7 @@ function SidebarTopmenu() {
       <ThemeProvider theme={theme}>
         <div>
           <div className="logo_main">
-            <img src={Logo} alt="logo" width={30} />
+            <img src={Logo} alt="logo" width={25} />
             <span className="logo_typo_parent">
               <h3 className="logo_typo">Analyze.</h3>
             </span>
@@ -85,9 +87,15 @@ function SidebarTopmenu() {
             }}
           >
             <ListItem>
-              <ListItemButton className="sidebar-menu-button">
+              <ListItemButton
+                className="sidebar-menu-button"
+                sx={{ color: "#8676FF", backgroundColor: "#F8F9FB" }}
+              >
                 <ListItemIcon>
-                  <GridViewOutlinedIcon className="icons_styles" />
+                  <GridViewOutlinedIcon
+                    className="icons_styles"
+                    sx={{ color: "#8676FF" }}
+                  />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
               </ListItemButton>
@@ -118,13 +126,14 @@ function SidebarTopmenu() {
                 <ListItemText primary="Messages" />
                 <ListItemText
                   primary="3"
-                  style={{
+                  primaryTypographyProps={{ fontSize: "12px" }}
+                  sx={{
                     backgroundColor: "#FF708B",
                     marginLeft: "2px",
                     textAlign: "center",
                     borderRadius: "3px",
                     color: "white",
-                    maxWidth: "1.5rem",
+                    maxWidth: "1.2rem",
                   }}
                 ></ListItemText>
               </ListItemButton>
@@ -137,12 +146,14 @@ function SidebarTopmenu() {
                 <ListItemText primary="Order Lists" />
                 <ListItemText
                   primary="2"
-                  style={{
+                  primaryTypographyProps={{ fontSize: "12px" }}
+                  sx={{
                     backgroundColor: "#FF708B",
+                    marginLeft: "2px",
                     textAlign: "center",
                     borderRadius: "3px",
                     color: "white",
-                    maxWidth: "1.5rem",
+                    maxWidth: "1.2rem",
                   }}
                 ></ListItemText>
               </ListItemButton>
@@ -159,7 +170,7 @@ function SidebarTopmenu() {
             <Divider />
 
             <ListItem>
-              <h4 style={{ color: "grey", fontWeight: "500" }}>Account</h4>
+              <h4 style={{ color: "#ADAEC2", fontWeight: "500" }}>Account</h4>
             </ListItem>
 
             <ListItem>
@@ -170,13 +181,14 @@ function SidebarTopmenu() {
                 <ListItemText primary="Settings" />
                 <ListItemText
                   primary="2"
-                  style={{
+                  primaryTypographyProps={{ fontSize: "12px" }}
+                  sx={{
                     backgroundColor: "#FF708B",
                     marginLeft: "2px",
                     textAlign: "center",
                     borderRadius: "3px",
                     color: "white",
-                    maxWidth: "1.5rem",
+                    maxWidth: "1.2rem",
                   }}
                 ></ListItemText>
               </ListItemButton>
@@ -192,7 +204,7 @@ function SidebarTopmenu() {
             <ListItem>
               <ListItemButton className="sidebar-menu-button">
                 <ListItemIcon>
-                  <HelpOutlineOutlinedIcon />
+                  <HelpOutlineOutlinedIcon className="icons_styles" />
                 </ListItemIcon>
                 <ListItemText primary="Helps" />
               </ListItemButton>

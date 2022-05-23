@@ -16,11 +16,12 @@ const theme = createTheme({
     divider: "rgba(0,0,0,0.3)",
   },
   components: {
-    MuiCard: {
+    MuiTableCell: {
       styleOverrides: {
         root: {
-          boxShadow: "none",
-          border: "1px solid #D7E4EE",
+          fontFamily: "Open Sans",
+
+          fontWeight: "600",
         },
       },
     },

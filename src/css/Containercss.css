@@ -11,12 +11,14 @@
 
 .container-parent-class .container-headline-user p {
   margin-top: -1rem;
-  color: gray;
+  color: #B8B9C9;
   font-size: 13px;
+  text-transform: lowercase;
 }
 
 .container-parent-class .container-headline-user h3 {
-  color: #535151;
+  color: #383874;
+  font-weight: 520;
 }
 
 .Topsearch-main-class {
@@ -30,10 +32,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
-  padding: 5px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  width: 25%;
+  padding: 3px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -58,6 +61,7 @@
 }
 
 .Topsearch-main-class .Topsearch-grid-two-child {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,12 +114,14 @@
 .bottom-table-main span {
   color: #383874;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Open Sans" sans-serif;
 }
 
 .bottom-table-main p {
   color: #CACBD8;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Open Sans" sans-serif;
 }
 /*# sourceMappingURL=Containercss.css.map */
