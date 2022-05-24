@@ -17,6 +17,8 @@ function Sidebarbottom() {
         maxWidth: 270,
         bgcolor: "background.paper",
         marginTop: "5rem",
+        position: "absolute",
+        top: "100%",
       }}
     >
       <Divider sx={{ width: "88%" }} />

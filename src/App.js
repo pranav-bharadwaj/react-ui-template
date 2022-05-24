@@ -31,7 +31,13 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="ui-template-main">
+      <div
+        className="ui-template-main"
+        style={{
+          minWidth: "100%",
+          width: "max-content",
+        }}
+      >
         <Container />
       </div>
     </ThemeProvider>

@@ -274,6 +274,14 @@ function Graph() {
                 fillOpacity={0.11}
                 strokeWidth={3}
                 fill="url(#colorUv)"
+                // dot={{
+                //   stroke: "#8676FF",
+                //   strokeWidth: 3,
+                //   width: "2px",
+                //   r: 5,
+                //   height: "2px",
+                //   fill: "#8676FF",
+                // }}
                 activeDot={{
                   stroke: "#8676FF",
                   strokeWidth: 3,

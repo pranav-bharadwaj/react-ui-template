@@ -109,7 +109,7 @@ function Topsearchbar() {
         </Grid>
       </Grid>
       <Divider
-        sx={{ position: "absolute", width: "103%", left: "-2.5%", top: "80%" }}
+        sx={{ position: "absolute", width: "102%", left: "-2.5%", top: "80%" }}
       />
     </div>
   );

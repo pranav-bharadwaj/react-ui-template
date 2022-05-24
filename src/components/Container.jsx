@@ -13,7 +13,7 @@ import Graph from "./Graph";
 import BottomTable from "./BottomTable";
 export default function Container() {
   return (
-    <div className="container-parent-class" style={{ width: "98%" }}>
+    <div className="container-parent-class" style={{ width: "99%" }}>
       <Grid container spacing={2} direction="row">
         <Grid item>
           <SidebarMain />
