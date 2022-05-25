@@ -96,7 +96,7 @@ function BottomTable() {
       sx={{ marginBottom: "1rem" }}
     >
       <Table
-        sx={{ minWidth: "100%", width: "max-content" }}
+        // sx={{ minWidth: "100%", width: "max-content" }}
         aria-label="simple table"
         size="small"
       >

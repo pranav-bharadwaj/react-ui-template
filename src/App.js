@@ -1,8 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
-import Container from "./components/Container";
 import { color } from "@mui/system";
+import { Box, Stack } from "@mui/material";
+import Container from "./components/Container";
+import SidebarMain from "./components/SidebarComponents/SidebarMain";
 
 const theme = createTheme({
   palette: {
@@ -31,15 +33,20 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div
-        className="ui-template-main"
-        style={{
-          minWidth: "100%",
-          width: "max-content",
-        }}
-      >
-        <Container />
-      </div>
+      {" "}
+      <SidebarMain />
+      <Stack direction={"column"}>
+        <Box
+          className="ui-template-main"
+          style={{
+            minWidth: "50%",
+            // width: "max-content",
+            display: "flex",
+          }}
+        >
+          <Container />
+        </Box>
+      </Stack>
     </ThemeProvider>
   );
 }

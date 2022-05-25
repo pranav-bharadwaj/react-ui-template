@@ -36,6 +36,7 @@ function CardWithShadow({
         maxWidth: 335,
         minHeight: 135,
         maxHeight: 200,
+
         display: "flex",
         position: "relative",
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",

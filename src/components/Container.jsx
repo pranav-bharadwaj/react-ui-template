@@ -10,15 +10,12 @@ import "../css/Containercss.css";
 import { Card, Grid } from "@mui/material";
 import Cards from "./Cards";
 import Graph from "./Graph";
+
 import BottomTable from "./BottomTable";
 export default function Container() {
   return (
     <div className="container-parent-class" style={{ width: "99%" }}>
       <Grid container spacing={2} direction="row">
-        <Grid item>
-          <SidebarMain />
-        </Grid>
-
         <Grid
           item
           spacing={3}
@@ -27,17 +24,20 @@ export default function Container() {
           style={{ marginLeft: "16rem" }}
         >
           <Grid container direction="column">
-            <Topsearchbar />
+            <Grid item>
+              <Topsearchbar />
+            </Grid>
+
             <Grid container spacing={2} direction="row">
               <Grid item xs>
                 <Grid container direction="row" spacing={2} alignItems="center">
-                  <Grid item xs={8}>
+                  <Grid item lg={6} md={4} sm={12} xs={12}>
                     <div className="container-headline-user">
                       <h3>Hi,&nbsp;Albert Tristian</h3>
                       <p>Welcome back to analyze</p>
                     </div>
                   </Grid>
-                  <Grid item xs>
+                  <Grid item lg={6} md={4} sm={8} xs={8}>
                     <Stack
                       direction="row"
                       spacing={2}
@@ -66,7 +66,7 @@ export default function Container() {
               </Grid>
             </Grid>
             <Grid container spacing={4} direction="row">
-              <Grid item xs>
+              <Grid item lg={4} md={4}>
                 <Cards
                   headline={"Total Income"}
                   cost={"$589,209.78"}
@@ -76,7 +76,7 @@ export default function Container() {
                   active={"deactive"}
                 />
               </Grid>
-              <Grid item xs>
+              <Grid item lg={4} md={4}>
                 <Cards
                   headline={"Total expense"}
                   cost={"$120,458.90"}
@@ -86,7 +86,7 @@ export default function Container() {
                   active={"deactive"}
                 />
               </Grid>
-              <Grid item xs>
+              <Grid item lg={4} md={4}>
                 <Cards
                   headline="Total visitors"
                   cost="502,903"
@@ -98,11 +98,11 @@ export default function Container() {
               </Grid>
             </Grid>
             <Grid container spacing={1}>
-              <Grid item xs={14} sx={{ marginTop: "1.5rem" }}>
+              <Grid item xs={12} sx={{ marginTop: "1.5rem" }}>
                 <Graph />
               </Grid>
             </Grid>
-            <Grid item>
+            <Grid item xs>
               <h4 style={{ color: "#383874" }}>Order list</h4>
               <BottomTable />
             </Grid>
