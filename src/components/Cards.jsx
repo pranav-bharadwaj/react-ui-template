@@ -10,6 +10,8 @@ import CallReceivedIcon from "@mui/icons-material/CallReceived";
 import "../css/Containercss.css";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
+import { makeStyles } from "@mui/styles";
+
 const theme = createTheme({
   components: {
     MuiCard: {
@@ -22,6 +24,24 @@ const theme = createTheme({
     },
   },
 });
+const useStyles = makeStyles({
+  card_main: {
+    display: "flex",
+    position: "relative",
+    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+    minHeight: 140,
+    maxHeight: 200,
+    [theme.breakpoints.down("sm")]: {
+      width: 330,
+    },
+    [theme.breakpoints.up("md")]: {
+      width: 330,
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: 340,
+    },
+  },
+});
 function CardWithShadow({
   headline,
   cost,
@@ -30,19 +50,9 @@ function CardWithShadow({
   active,
   percentageData,
 }) {
+  const classes = useStyles();
   return (
-    <Card
-      sx={{
-        maxWidth: 335,
-        minHeight: 135,
-        maxHeight: 200,
-
-        display: "flex",
-        position: "relative",
-        boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-      }}
-      className={active}
-    >
+    <Card className={active + " " + classes.card_main}>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 0" }}>
           <Typography
@@ -127,7 +137,7 @@ function CardWithShadow({
                 backgroundColor: "#F8F9FB",
                 padding: "8px",
                 color: "#21CC9E",
-                fontSize: "20px",
+                fontSize: "35px",
                 fontWeight: "800",
                 borderRadius: "7px",
               }}
@@ -139,7 +149,7 @@ function CardWithShadow({
                 backgroundColor: "#F8F9FB",
                 padding: "8px",
                 color: "#21CC9E",
-                fontSize: "20px",
+                fontSize: "35px",
                 fontWeight: "800",
                 borderRadius: "7px",
               }}
@@ -158,18 +168,10 @@ function CardWithoutShadow({
   active,
   percentageData,
 }) {
+  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <Card
-        sx={{
-          maxWidth: 335,
-          minHeight: 130,
-          maxHeight: 200,
-          display: "flex",
-          position: "relative",
-        }}
-        className={active}
-      >
+      <Card className={active + " " + classes.card_main}>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography
@@ -254,7 +256,7 @@ function CardWithoutShadow({
                   backgroundColor: "#F8F9FB",
                   padding: "8px",
                   color: "#21CC9E",
-                  fontSize: "20px",
+                  fontSize: "35px",
                   fontWeight: "800",
                   borderRadius: "7px",
                 }}
@@ -266,7 +268,7 @@ function CardWithoutShadow({
                   backgroundColor: "#F8F9FB",
                   padding: "8px",
                   color: "#21CC9E",
-                  fontSize: "20px",
+                  fontSize: "35px",
                   fontWeight: "800",
                   borderRadius: "7px",
                 }}

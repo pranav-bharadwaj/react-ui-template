@@ -16,17 +16,11 @@ import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Logo from "../../assets/logo.png";
-import Avatar from "@mui/material/Avatar";
-
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import AvatarImg from "../../assets/iconping.jpg";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import "../../css/sidebar.css";
-import { style } from "@mui/system";
-import { IconButton, Typography } from "@mui/material";
+
 const theme = createTheme({
   components: {
     MuiListItemButton: {
@@ -87,7 +81,7 @@ function SidebarTopmenu() {
             </span>
           </div>
 
-          <List>
+          <List component="nav">
             <ListItem>
               <ListItemButton
                 className="sidebar-menu-button"
@@ -210,35 +204,6 @@ function SidebarTopmenu() {
                 </ListItemIcon>
                 <ListItemText primary="Helps" />
               </ListItemButton>
-            </ListItem>
-            <Divider />
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src={AvatarImg} />
-              </ListItemAvatar>
-
-              <ListItemText
-                primary="Albert Tristian"
-                style={{ color: "#383874" }}
-                primaryTypographyProps={{ fontSize: "15px", fontWeight: 600 }}
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      sx={{ display: "inline", fontSize: "12px" }}
-                      component="p"
-                      variant="body3"
-                      rem
-                      color="grey"
-                    >
-                      Sr Manager
-                    </Typography>
-                  </React.Fragment>
-                }
-              />
-              <IconButton />
-              <ListItemIcon>
-                <KeyboardArrowDownIcon />
-              </ListItemIcon>
             </ListItem>
           </List>
         </div>

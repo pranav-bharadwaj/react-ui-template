@@ -2,9 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { color } from "@mui/system";
-import { Box, Stack } from "@mui/material";
+import { Box, Button, Drawer, Stack } from "@mui/material";
 import Container from "./components/Container";
 import SidebarMain from "./components/SidebarComponents/SidebarMain";
+import SidebarTopmenu from "./components/SidebarComponents/SidebarTopmenu";
+import ResponsiveContainer from "./ResponiveContainer";
 
 const theme = createTheme({
   palette: {
@@ -33,20 +35,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      {" "}
-      <SidebarMain />
-      <Stack direction={"column"}>
-        <Box
-          className="ui-template-main"
-          style={{
-            minWidth: "50%",
-            // width: "max-content",
-            display: "flex",
-          }}
-        >
-          <Container />
-        </Box>
-      </Stack>
+      <ResponsiveContainer />
     </ThemeProvider>
   );
 }

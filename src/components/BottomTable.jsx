@@ -90,132 +90,168 @@ function SuccessBtn({ context }) {
 }
 function BottomTable() {
   return (
-    <TableContainer
-      component={Paper}
-      className="bottom-table-main"
-      sx={{ marginBottom: "1rem" }}
+    <Paper
+      sx={{
+        width: "100%",
+        marginTop: "1rem",
+        border: "none",
+        boxShadow: "none",
+      }}
     >
-      <Table
-        // sx={{ minWidth: "100%", width: "max-content" }}
-        aria-label="simple table"
-        size="small"
+      <Typography
+        component="h6"
+        variant="h6"
+        sx={{
+          color: "blue",
+          fontWeight: "bold",
+          marginBottom: "15px",
+          color: "#383874",
+          fontSize: "15px",
+        }}
       >
-        <TableHead className="table-header" sx={{ textAlign: "start" }}>
-          <TableRow>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              PRODUCT
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              ORDER DATE
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              STATUS
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              CUSTOMER
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              PRICE PER UNIT
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              QUANTITY
-            </TableCell>
-            <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
-              TOTAL PRICE
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.product}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell>
-                <section
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
-                  <Avatar
-                    sx={{ bgcolor: green[500], width: 34, height: 34 }}
-                    variant="rounded"
-                    src={cameraimg}
-                  >
-                    N
-                  </Avatar>
-                  <Box
-                    sx={{
-                      marginLeft: "1rem",
-                    }}
-                  >
-                    <p>#2345</p>
-                    <span>{row.product}</span>
-                  </Box>
-                </section>
+        Order List
+      </Typography>
+      <TableContainer
+        component={Paper}
+        className="bottom-table-main"
+        sx={{
+          marginBottom: "1rem",
+          maxHeight: 440,
+          border: "none",
+          boxShadow: "none",
+        }}
+      >
+        <Table
+          sx={{
+            width: {
+              xs: "max-content",
+              sm: "max-content",
+              lg: "100%",
+              md: "100%",
+            },
+            minWidth: 700,
+          }}
+          stickyHeader
+          aria-label="sticky table"
+          size="small"
+        >
+          <TableHead className="table-header" sx={{ textAlign: "start" }}>
+            <TableRow>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                PRODUCT
               </TableCell>
-              <TableCell>
-                <div>
-                  <p>10:09 AM</p>
-                  <span>{row.orderdate}</span>
-                </div>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                ORDER DATE
               </TableCell>
-              <TableCell>
-                {row.status === "Success" ? (
-                  <SuccessBtn context={"Success"} />
-                ) : (
-                  <ShippingBtn context={"Shipping"} />
-                )}
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                STATUS
               </TableCell>
-              <TableCell>
-                <div style={{ marginTop: "1rem" }}>
-                  <span>{row.customer}</span>
-                  <p>Los Angles,New york</p>
-                </div>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                CUSTOMER
               </TableCell>
-              <TableCell align="center">
-                <Typography
-                  style={{
-                    color: "#41417A",
-                    fontSize: "17px",
-                    fontFamily: "Open Sans",
-                    fontWeight: "600",
-                  }}
-                >
-                  {row.priceperrate}
-                </Typography>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                PRICE PER UNIT
               </TableCell>
-              <TableCell align="center">
-                <Typography
-                  style={{
-                    color: "#41417A",
-                    fontSize: "17px",
-                    fontFamily: "Open Sans",
-                    fontWeight: "600",
-                  }}
-                >
-                  {row.quantity}
-                </Typography>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                QUANTITY
               </TableCell>
-              <TableCell>
-                <Typography
-                  style={{
-                    color: "#21CC9E",
-                    fontSize: "17px",
-                    fontFamily: "Open Sans",
-                    fontWeight: "600",
-                  }}
-                >
-                  {row.totalprice}
-                </Typography>
+              <TableCell sx={{ color: "#ADAEC2", fontSize: "12px" }}>
+                TOTAL PRICE
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.product}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>
+                  <section
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Avatar
+                      sx={{ bgcolor: green[500], width: 34, height: 34 }}
+                      variant="rounded"
+                      src={cameraimg}
+                    >
+                      N
+                    </Avatar>
+                    <Box
+                      sx={{
+                        marginLeft: "1rem",
+                      }}
+                    >
+                      <p>#2345</p>
+                      <span>{row.product}</span>
+                    </Box>
+                  </section>
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <p>10:09 AM</p>
+                    <span>{row.orderdate}</span>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  {row.status === "Success" ? (
+                    <SuccessBtn context={"Success"} />
+                  ) : (
+                    <ShippingBtn context={"Shipping"} />
+                  )}
+                </TableCell>
+                <TableCell>
+                  <div style={{ marginTop: "1rem" }}>
+                    <span>{row.customer}</span>
+                    <p>Los Angles,New york</p>
+                  </div>
+                </TableCell>
+                <TableCell align="center">
+                  <Typography
+                    style={{
+                      color: "#41417A",
+                      fontSize: "17px",
+                      fontFamily: "Open Sans",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {row.priceperrate}
+                  </Typography>
+                </TableCell>
+                <TableCell align="center">
+                  <Typography
+                    style={{
+                      color: "#41417A",
+                      fontSize: "17px",
+                      fontFamily: "Open Sans",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {row.quantity}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography
+                    style={{
+                      color: "#21CC9E",
+                      fontSize: "17px",
+                      fontFamily: "Open Sans",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {row.totalprice}
+                  </Typography>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 }
 
