@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
 import { alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import SearchIcon from "@mui/icons-material/Search";
@@ -48,8 +48,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "25ch",
+    [theme.breakpoints.up("xs")]: {
+      width: "20ch",
     },
   },
 }));
@@ -57,7 +57,7 @@ function Topsearchbar() {
   return (
     <div className="Topsearch-main-class">
       <Grid container spacing={2}>
-        <Grid item xs>
+        <Grid item lg={6} md={4} sm={3} xs={8}>
           <div className="Topsearch-grid-one-main">
             <div className="Topsearch-grid-one-child">
               <span
@@ -85,7 +85,7 @@ function Topsearchbar() {
           </div>
         </Grid>
 
-        <Grid item xs>
+        <Grid item lg={6} md={4} sm={3} xs={8}>
           <div className="Topsearch-grid-two-child">
             <NotificationsNoneIcon
               sx={{
@@ -109,7 +109,10 @@ function Topsearchbar() {
         </Grid>
       </Grid>
       <Divider
-        sx={{ position: "absolute", width: "102%", left: "-2.5%", top: "80%" }}
+        sx={{
+          left: "-2.5%",
+          top: "95%",
+        }}
       />
     </div>
   );

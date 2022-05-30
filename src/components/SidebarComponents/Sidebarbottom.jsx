@@ -14,41 +14,13 @@ function Sidebarbottom() {
     <List
       sx={{
         width: "100%",
-        maxWidth: 270,
-        bgcolor: "background.paper",
         marginTop: "5rem",
         position: "absolute",
         top: "100%",
       }}
     >
-      <Divider sx={{ width: "88%" }} />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src={AvatarImg} />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Albert Tristian"
-          style={{ color: "#383874" }}
-          primaryTypographyProps={{ fontSize: "15px", fontWeight: 600 }}
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: "inline", fontSize: "12px" }}
-                component="p"
-                variant="body3"
-                rem
-                color="grey"
-              >
-                Sr Manager
-              </Typography>
-            </React.Fragment>
-          }
-        />
-        <IconButton />
-        <ListItemIcon>
-          <KeyboardArrowDownIcon />
-        </ListItemIcon>
-      </ListItem>
+      
+      
     </List>
   );
 }

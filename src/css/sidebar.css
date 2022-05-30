@@ -9,17 +9,14 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-left: 1em;
-  height: 5em;
+  height: 4em;
 }
 
 .side-menu-top-main .logo_main .logo_typo_parent {
   margin-left: 0.5em;
   color: #8676FF;
   font-size: 18px;
-}
-
-.side-menu-top-main .list_main {
-  margin-top: 1em;
+  font-family: 'Roboto';
 }
 
 .side-menu-top-main .sidebar-menu-button:focus .icons_styles {
@@ -65,7 +62,6 @@
 
 .side-menu-liner {
   width: 1px;
-  height: 100vh;
   left: 85%;
   z-index: 999;
   position: absolute;
