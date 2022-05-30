@@ -29,6 +29,58 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          border: "2px solid #D7E4EE",
+        },
+      },
+    },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "5px",
+          color: "#ADAEC2",
+          "&:focus": {
+            color: "#8676FF",
+            backgroundColor: "#F8F9FB",
+          },
+        },
+      },
+    },
+    MuiListItem: {
+      defaultProps: {
+        dense: true,
+      },
+    },
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          marginRight: "-1rem",
+          color: "#ADAEC2",
+        },
+      },
+    },
+    MuiListItemText: {
+      defaultProps: {
+        primaryTypographyProps: {
+          fontFamily: "Roboto",
+          fontWeight: "500",
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          fontSize: "10px",
+          "&:focus": {
+            color: "#8676FF",
+            backgroundColor: "#F8F9FB",
+          },
+        },
+      },
+    },
   },
 });
 

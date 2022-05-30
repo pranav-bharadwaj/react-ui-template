@@ -55,7 +55,14 @@ export default function Container() {
         <Grid item>
           <Stack direction="row" spacing={2} justifyContent="flex-start">
             <Button
-              sx={{ width: "7rem", border: "2px solid #8676FF" }}
+              sx={{
+                width: "7rem",
+
+                border: "2px solid #8676FF",
+                ":hover": {
+                  border: "2px solid #8676FF",
+                },
+              }}
               variant="outlined"
               style={{ textTransform: "capitalize" }}
               endIcon={<ShareIcon />}
@@ -77,7 +84,7 @@ export default function Container() {
         container
         justifyContent={"space-between"}
         spacing={3}
-        sx={{ marginTop: "0.5rem" }}
+        sx={{ marginTop: "0.1rem" }}
       >
         <Grid item>
           <Cards
